@@ -5,6 +5,8 @@
     if($delete){
         echo "<script> alert('thanh cong');
         window.location='select.php'</script>";
+        header("Location: muctieu1.php");
+            exit();
     }
     else
         echo "<script> alert('khong thanh cong')</script>";

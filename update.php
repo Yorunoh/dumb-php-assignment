@@ -20,12 +20,12 @@
                 <?php foreach ($data as $a):?>
                     <tr>
                         <td>Tên</td>
-                        <td><input type="text" name="mucdich" placeholder="<?php echo $a['mucdich']?>"></td>
+                        <td><input type="text" name="mucdich" placeholder="<?php echo $a['mucdich']?>"  class="select4"></td>
                     </tr>
                     <tr>
                     <td>Tần suất giám sát</td>
                         <td align="center">
-                            <select id="tansuat" name="tansuat" class="select3">
+                            <select id="tansuat" name="tansuat" class="select4">
                             <option value="không ai" <?php if($a['tansuat'] == 'không ai') {?> selected="selected" <?php } ?>>Không ai</option>
                             <option value="Hằng ngày" <?php if($a['tansuat'] == 'Hằng ngày') {?> selected="selected" <?php } ?>>Hằng ngày</option>
                             <option value="Hằng tuần" <?php if($a['tansuat'] == 'Hằng tuần') {?> selected="selected" <?php } ?>>Hằng tuần</option>
@@ -37,12 +37,13 @@
                     
                     <tr>
                         <td>Thủ tục:</td>
-                        <td><input type="text" name="thutuc" placeholder="<?php echo $a['thutuc']?>"></td>
+                        <td><input type="text" name="thutuc" placeholder="<?php echo $a['thutuc']?>" class="select4"></td>
                     </tr>
                     <tr>
-                        <td colspan=2 align="center"><input type="submit" name="update" id="" value="Cập nhật"></td>
+                        <td colspan=2 align="center"><input type="submit" name="update" id="" value="Cập nhật" class="sub1"></td>
                     </tr>
                 <?php endforeach;?>
+
             </table>
         </form>
     </div>
@@ -60,6 +61,8 @@
 
             if($up_muctieu){
                 echo "<script>alert('thanh cong');</script>";
+                header("Location: muctieu1.php");
+                exit();
             }
             else echo "<script>alert('khong thanh cong');</script>";
         }

@@ -58,7 +58,7 @@
                                 </select>
                         </div>
                         <div class="col2">
-                            <div class="thutuc">Thủ tục:</div>
+                            <label for="thutuc" class="lab">Thủ tục</label>
                             <input type="text" name="thutuc" placeholder="<?php echo $a['thutuc']?>" class="select4">
                         </div>
                         

@@ -685,11 +685,24 @@ th {
     margin-left: 20px;
 }
 .sub1{
+    margin-top:150px;
+    margin-left:450px;
+    position: absolute;
     background-color: rgb(229, 230, 230);;
     border-radius:  5px 5px 5px 5px;
     height:25px;
     width:100px;
     border: 1px solid white;
-    display: block;
-    margin: 0 auto;
 }
+
+/*
+.inputbox{
+    width: 1040px;
+    height: 250px;
+    float: left;
+    position:relative;   
+    background-color: white;
+    border-radius:  10px 10px 10px 10px;
+    border: 1px solid rgb(229, 230, 230);
+}
+*/

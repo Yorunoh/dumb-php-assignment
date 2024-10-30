@@ -31,40 +31,48 @@
         </div>
     
     </header>
-    
+
     <div class="formupdate">
         <form method="POST">
-            <table border="1">
-                <?php foreach ($data as $a):?>
-                    <tr>
-                        <td>Tên</td>
-                        <td><input type="text" name="mucdich" placeholder="<?php echo $a['mucdich']?>"  class="select4"></td>
-                    </tr>
-                    <tr>
-                    <td>Tần suất giám sát</td>
-                        <td align="center">
-                            <select id="tansuat" name="tansuat" class="select4">
-                            <option value="không ai" <?php if($a['tansuat'] == 'không ai') {?> selected="selected" <?php } ?>>Không ai</option>
-                            <option value="Hằng ngày" <?php if($a['tansuat'] == 'Hằng ngày') {?> selected="selected" <?php } ?>>Hằng ngày</option>
-                            <option value="Hằng tuần" <?php if($a['tansuat'] == 'Hằng tuần') {?> selected="selected" <?php } ?>>Hằng tuần</option>
-                            <option value="Hằng tháng" <?php if($a['tansuat'] == 'Hằng tháng') {?> selected="selected" <?php } ?>>Hằng tháng</option>
-                            <option value="Quý" <?php if($a['tansuat'] == 'Quý') {?> selected="selected" <?php } ?>>Quý</option>
-                            </select>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Thủ tục:</td>
-                        <td><input type="text" name="thutuc" placeholder="<?php echo $a['thutuc']?>" class="select4"></td>
-                    </tr>
-                    <tr>
-                        <td colspan=2 align="center"><input type="submit" name="update" id="" value="Cập nhật" class="sub1"></td>
-                    </tr>
-                <?php endforeach;?>
+            <div class="midle_second2">
+            <div class="midle_second3">
+            <!--
+                <div class="inputbox">
+                -->
+                <div class="row">
+                
+                    <?php foreach ($data as $a):?>
+                        <div class="col1">
+                            <label for="mucdich" class="lab">Tên</label>
+                            <input type="text" name="mucdich" placeholder="<?php echo $a['mucdich']?>"  class="select4">
+                        </div>
+                        
+                        <div class="col2">
+                            <label for="tansuat" class="lab">Tần suất giám sát</label>
+                                <select id="tansuat" name="tansuat" class="select4">
+                                <option value="không ai" <?php if($a['tansuat'] == 'không ai') {?> selected="selected" <?php } ?>>Không ai</option>
+                                <option value="Hằng ngày" <?php if($a['tansuat'] == 'Hằng ngày') {?> selected="selected" <?php } ?>>Hằng ngày</option>
+                                <option value="Hằng tuần" <?php if($a['tansuat'] == 'Hằng tuần') {?> selected="selected" <?php } ?>>Hằng tuần</option>
+                                <option value="Hằng tháng" <?php if($a['tansuat'] == 'Hằng tháng') {?> selected="selected" <?php } ?>>Hằng tháng</option>
+                                <option value="Quý" <?php if($a['tansuat'] == 'Quý') {?> selected="selected" <?php } ?>>Quý</option>
+                                </select>
+                        </div>
+                        <div class="col2">
+                            <div class="thutuc">Thủ tục:</div>
+                            <input type="text" name="thutuc" placeholder="<?php echo $a['thutuc']?>" class="select4">
+                        </div>
+                        
+                            <input type="submit" name="update" id="" value="Cập nhật" class="sub1">
+                        
+                    <?php endforeach;?>
 
-            </table>
+                </div>
+            <!--
+            </div>
+        -->
+            </div>
         </form>
-    </div>
+        </div>
         <?php
         if(isset($_POST['update']))
         {

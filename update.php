@@ -14,6 +14,24 @@
         $data = $get_data -> select_muctieu($ID);
 ?>
 <body>
+    <header>
+
+        <div class="logo">
+            chưa có
+        </div>
+    <!--
+        <div class="nav">
+            <a href="#">Mục tiêu chất lượng</a>
+            <a href="#">Thủ tục chất lượng</a>
+            <a href="#">Cây thủ tục</a>
+        </div>
+    -->
+        <div class="nav-left">
+            <input type="search" name="query" placeholder="Tìm kiếm hoặc gõ lệnh (ctrl+g)" class="search-bar">
+        </div>
+    
+    </header>
+    
     <div class="formupdate">
         <form method="POST">
             <table border="1">

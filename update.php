@@ -72,7 +72,47 @@
         -->
             </div>
         </form>
+            
+            <div class="midle_third">
+                <h3 class="h33">Mục tiêu</h3>
+                <div class="additionalform">
+                    <form method="POST">
+                        <table border="1">
+                            <tr>
+                                <td>STT</td>
+                                <td>Mục tiêu</td>
+                                <td>Đơn vị đo lường</td>
+                                <td>tuy chon</td>
+                            </tr>
+                            <?php foreach ($data as $a):?>
+                            <tr>
+                                <td><?php echo $a['']; ?></td>
+                                <td><?php echo $a['']; ?></td>       
+                                <td><?php echo $a['']; ?></td>
+                                
+                                <td><a href="update.php?SUA=<?php echo $a['ID']?>" name="update">sua</a>&nbsp
+                                <a href="delete.php?XOA=<?php echo $a['ID']?>" name="delete" onclick="if(confirm('Bạn có muốn xóa không?')) return true; else return false;">xoa</a></td>
+                            
+                            </tr>
+                            <input type="submit" name="update" id="" value="Thêm hàng" class="sub1">
+                            <?php endforeach;?>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+
+
         </div>
+        
+            
+                
+                
+
+
+
+
+
         <?php
         if(isset($_POST['update']))
         {

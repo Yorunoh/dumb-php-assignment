@@ -688,7 +688,7 @@ th {
     margin-top:150px;
     margin-left:450px;
     position: absolute;
-    background-color: rgb(229, 230, 230);;
+    background-color: rgb(229, 230, 230);
     border-radius:  5px 5px 5px 5px;
     height:25px;
     width:100px;
@@ -706,3 +706,20 @@ th {
     border: 1px solid rgb(229, 230, 230);
 }
 */
+
+.midle_third{
+    width: 1045px;
+    height: 310px;
+    float: left;
+    margin-top: 50px;
+    background-color: white;
+    border-radius:  10px 10px 10px 10px;
+    border: 1px solid rgb(229, 230, 230);
+}
+
+.additionalform{
+    float: left;
+    border-radius: 20px 20px 20px 20px;
+    margin-right: auto;
+    width: 1000px;
+}

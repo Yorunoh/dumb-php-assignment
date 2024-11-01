@@ -63,6 +63,7 @@
                         </div>
                         
                             <input type="submit" name="update" id="" value="Cập nhật" class="sub1">
+                            
                         
                     <?php endforeach;?>
 

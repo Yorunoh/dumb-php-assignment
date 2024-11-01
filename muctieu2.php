@@ -66,8 +66,11 @@
                                 if(isset($_POST['submit'])){
                             $get_data= new data();
                             $insert=$get_data->insert($_POST['mucdich'],$_POST['thutuc'],$_POST['tansuat']);
-                            if($insert)
+                            if($insert){
                             echo"<script>alert('đăng nhập thành công')</script>";
+                            header("Location: muctieu1.php");
+                            exit();
+                            }
                             else echo"<script>alert('thất bại')</script>";
                             } 
                             ?>

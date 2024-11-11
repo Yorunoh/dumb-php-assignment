@@ -79,23 +79,34 @@
                     <div>
                         <p class="title">Mục Tiêu</p>
                     </div>
-                    <table border="1" cellpadding="10" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <th><input type="checkbox">STT</th>
-
-                            <th>Mục tiêu</th>
-                            <th>Mục tiêu</th>
-                            <th>Đơn vị đo lường</th>
-                            <th>Chỉnh sửa</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="5" class="no-data">Không Có Dữ Liệu</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <form method="POST">
+                            <table border="1" cellpadding="10" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th><input type="checkbox">STT</th>
+                                    <th>Mục tiêu</th>
+                                    <th>Đơn vị đo lường</th>
+                                    <th>Chỉnh sửa</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                <!--
+                                    <?php foreach ($data as $a):?>
+                                        <tr>
+                                            <td><?php echo $a['mucdich']; ?></td>
+                                            <td><?php echo $a['tansuat']; ?></td>
+                                            <td><?php echo $a['thutuc']; ?></td>
+                                            
+                                            <td><a href="update.php?SUA=<?php echo $a['ID']?>" name="update">sua</a>&nbsp
+                                            <a href="delete.php?XOA=<?php echo $a['ID']?>" name="delete" onclick="if(confirm('Bạn có muốn xóa không?')) return true; else return false;">xoa</a></td>
+                                        
+                                        </tr>
+                                    <?php endforeach;?>
+                                -->
+                                </tbody>
+                            </table>
+                    </form>
                 <!--
                     <button type="submit" form="myForm" name="submit" class="sub">Thêm hàng</button>
                         -->

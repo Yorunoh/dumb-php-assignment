@@ -11,7 +11,7 @@
     <header>
 
         <div class="logo">
-            chưa có
+           <a href="muctieu1.php">chưa có</a>
         </div>
 
         <div class="nav-left">
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="col3">
                                     <label for="tansuat" class="lab">Tần suất giám sát</label>
-                                    <select id="tansuat" name="tansuat" class="select3">
+                                    <select id="tansuat" name="tansuat" class="select2">
                                         <option value="không ai">Không ai</option>
                                         <option value="Hằng ngày">Hằng ngày</option>
                                         <option value="Hằng tuần">Hằng tuần</option>
@@ -79,42 +79,61 @@
                     <div>
                         <p class="title">Mục Tiêu</p>
                     </div>
-                    <form method="POST">
-                            <table border="1" cellpadding="10" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th><input type="checkbox">STT</th>
-                                    <th>Mục tiêu</th>
-                                    <th>Đơn vị đo lường</th>
-                                    <th>Chỉnh sửa</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                        <form method="POST" class="tabdata">
+                                <table border="1" cellpadding="10" cellspacing="0">
+                                    <thead>
                                     <tr>
-                                <!--
-                                    <?php foreach ($data as $a):?>
+                                        <th><input type="checkbox">STT</th>
+                                        <th>Mục tiêu</th>
+                                        <th>Đơn vị đo lường</th>
+                                        <th>Chỉnh sửa</th>
+                                    </tr>
+                                    </thead>
+                                    <?php
+                                        include('control2.php');
+                                        $get_data = new data3();
+                                        $data2 = $get_data -> select_muctieu2();
+                                    ?>
+                                    <tbody>
                                         <tr>
-                                            <td><?php echo $a['mucdich']; ?></td>
-                                            <td><?php echo $a['tansuat']; ?></td>
-                                            <td><?php echo $a['thutuc']; ?></td>
+                                    
+                                        <?php foreach ($data2 as $b):?>
+                                            <tr>
+                                                <td><?php echo $b['STT'];?></td>
+                                                <td><?php echo $b['mucdich'];?></td>
+                                                <td><?php echo $b['donvi']; ?></td>
+                                                
+                                                <td>
+                                                <a href="update2.php?SUA=<?php echo $b['STT']?>" name="update">sua</a>&nbsp
+                                                <a href="delete2.php?XOA=<?php echo $b['STT']?>" name="delete" onclick="if(confirm('Bạn có muốn xóa không?')) return true; else return false;">xoa</a>
+                                                </td>
                                             
-                                            <td><a href="update.php?SUA=<?php echo $a['ID']?>" name="update">sua</a>&nbsp
-                                            <a href="delete.php?XOA=<?php echo $a['ID']?>" name="delete" onclick="if(confirm('Bạn có muốn xóa không?')) return true; else return false;">xoa</a></td>
-                                        
-                                        </tr>
-                                    <?php endforeach;?>
-                                -->
-                                </tbody>
-                            </table>
-                    </form>
-                <!--
-                    <button type="submit" form="myForm" name="submit" class="sub">Thêm hàng</button>
-                        -->
-                   
+                                            </tr>
+                                            
+                                        <?php endforeach;?>
+                                    
+                                    </tbody>
+                                </table>
+                                <button type="submit" name="submit2" class="finalsub">Thêm hàng</button>
+                        </form>
                 </div>
+
+                <?php
+        
+                                if(isset($_POST['submit2'])){
+                            $get_data = new data3();
+                            $insert = $get_data->insert($_POST['mucdich'],$_POST['donvi']);
+                            if($insert){
+                            
+                            
+                            }
+                            else echo"<script>alert('thất bại')</script>";
+                            } 
+                            
+                ?>
+
                 </div>
             </div>
-            
         </div>
     </div>
 </body>

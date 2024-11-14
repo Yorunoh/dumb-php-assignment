@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2024 at 05:27 PM
+-- Generation Time: Nov 14, 2024 at 12:18 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,9 +31,15 @@ CREATE TABLE `muctieu` (
   `ID` int(11) NOT NULL,
   `mucdich` text NOT NULL,
   `thutuc` text NOT NULL,
-  `tansuat` text NOT NULL,
-  `STT` int(11) NOT NULL
+  `tansuat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `muctieu`
+--
+
+INSERT INTO `muctieu` (`ID`, `mucdich`, `thutuc`, `tansuat`) VALUES
+(32, 'djkwadbkja', 'fwkjfkaj', 'không ai');
 
 -- --------------------------------------------------------
 
@@ -52,8 +58,9 @@ CREATE TABLE `muctieu2` (
 --
 
 INSERT INTO `muctieu2` (`STT`, `mucdich`, `donvi`) VALUES
-(34, '', ''),
-(35, '', '');
+(1, '', ''),
+(2, '', ''),
+(3, '', '');
 
 --
 -- Indexes for dumped tables
@@ -63,8 +70,7 @@ INSERT INTO `muctieu2` (`STT`, `mucdich`, `donvi`) VALUES
 -- Indexes for table `muctieu`
 --
 ALTER TABLE `muctieu`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `stt` (`STT`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `muctieu2`
@@ -80,13 +86,19 @@ ALTER TABLE `muctieu2`
 -- AUTO_INCREMENT for table `muctieu`
 --
 ALTER TABLE `muctieu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `muctieu2`
 --
 ALTER TABLE `muctieu2`
-  MODIFY `STT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `STT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+TRUNCATE TABLE `muctieu`;
+
+-- Xóa tất cả bản ghi và reset AUTO_INCREMENT cho bảng `muctieu2`
+TRUNCATE TABLE `muctieu2`;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

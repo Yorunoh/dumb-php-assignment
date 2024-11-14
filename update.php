@@ -10,8 +10,33 @@
 <?php
         include('control.php');
         $get_data = new data();
-        $ID = $_GET['SUA'];
-        $data = $get_data -> select_muctieu($ID);
+        
+        if (isset($_GET['SUA'])) {
+            $ID = $_GET['SUA'];
+            $data = $get_data->select_id($ID);
+        } else {
+            header("Location: muctieu1.php");
+            exit();
+        }
+        
+        if(isset($_POST['update']))
+        {
+            if(empty($_POST['mucdich']))
+                echo "muc dich khong duoc de trong";
+            else if(empty($_POST['tansuat']))
+                echo "tansuat khong duoc de trong";
+            else if (empty($_POST['thutuc']))
+                echo "thu tuc khong duoc de trong";
+            else
+                $up_muctieu = $get_data -> update_muctieu($_POST['mucdich'], $_POST['tansuat'], $_POST['thutuc'], $ID);
+
+            if($up_muctieu){
+                echo "<script>alert('thanh cong');</script>";
+                header("Location: muctieu1.php");
+                exit();
+            }
+            else echo "<script>alert('khong thanh cong');</script>";
+        }
 ?>
 <body>
     <header>
@@ -19,13 +44,7 @@
         <div class="logo">
             chưa có
         </div>
-    <!--
-        <div class="nav">
-            <a href="#">Mục tiêu chất lượng</a>
-            <a href="#">Thủ tục chất lượng</a>
-            <a href="#">Cây thủ tục</a>
-        </div>
-    -->
+
         <div class="nav-left">
             <input type="search" name="query" placeholder="Tìm kiếm hoặc gõ lệnh (ctrl+g)" class="search-bar">
         </div>
@@ -68,82 +87,75 @@
                     <?php endforeach;?>
 
                 </div>
+      
+    
             <!--
             </div>
         -->
             </div>
         </form>
             
-            <div class="midle_third">
+            <div class="midle_second5">
                 <h3 class="h33">Mục tiêu</h3>
                 <div class="additionalform">
-                    <form method="POST">
-                        <table border="1">
-                            <tr>
-                                <td>STT</td>
-                                <td>Mục tiêu</td>
-                                <td>Đơn vị đo lường</td>
-                                <td>tuy chon</td>
-                            </tr>
-                    
-                            
-                            <tr>
-                                <td>
-                        
-                            
-                                </td>
-                                <td>
-                                
-                            
-                                </td>       
-                                <td>
-                                
-                            
-                                </td>
-                                
-                                <td><a href="update.php?SUA=" name="update">sua</a>&nbsp
-                                <a href="delete.php?XOA=" name="delete" onclick="if(confirm('Bạn có muốn xóa không?')) return true; else return false;">xoa</a></td>
-                            
-                            </tr>
-                            <input type="submit" name="update" id="" value="Thêm hàng" class="sub1">
-                            
-                        </table>
-                    </form>
+                <form method="POST" class="tabdata">
+                                <table border="1" cellpadding="10" cellspacing="0" class="tabdata">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox">STT</th>
+                                        <th>Mục tiêu</th>
+                                        <th>Đơn vị đo lường</th>
+                                        <th>Chỉnh sửa</th>
+                                    </tr>
+                                    </thead>
+                                    <?php
+                                        include('control2.php');
+                                        $get_data = new data3();
+                                        $data2 = $get_data -> select_muctieu2();
+                                    ?>
+                                    <tbody>
+                                        <tr>
+                                    
+                                        <?php foreach ($data2 as $b):?>
+                                            <tr>
+                                                <td><?php echo $b['STT'];?></td>
+                                                <td><?php echo $b['mucdich'];?></td>
+                                                <td><?php echo $b['donvi']; ?></td>
+                                                
+                                                <td>
+                                                <a href="update2.php?SUA=<?php echo $b['STT']?>" name="update">sua</a>&nbsp
+                                                <a href="delete2.php?XOA=<?php echo $b['STT']?>" name="delete" onclick="if(confirm('Bạn có muốn xóa không?')) return true; else return false;">xoa</a>
+                                                </td>
+                                            
+                                            </tr>
+                                            
+                                        <?php endforeach;?>
+                                    
+                                    </tbody>
+                                </table>
+                                <button type="submit" name="submit2" class="finalsub">Thêm hàng</button>
+                        </form>
                 </div>
+                <?php
+        
+                                if(isset($_POST['submit2'])){
+                            $get_data = new data3();
+                            $insert = $get_data->insert($_POST['mucdich'],$_POST['donvi']);
+                            if($insert){
+                            
+                            
+                            }
+                            else echo"<script>alert('thất bại')</script>";
+                            } 
+                            
+                ?>
             </div>
 
 
-
         </div>
+
         
-            
-                
-                
-
-
-
-
-
-        <?php
-        if(isset($_POST['update']))
-        {
-            if(empty($_POST['mucdich']))
-                echo "muc dich khong duoc de trong";
-            else if(empty($_POST['tansuat']))
-                echo "tansuat khong duoc de trong";
-            else if (empty($_POST['thutuc']))
-                echo "thu tuc khong duoc de trong";
-            else
-                $up_muctieu = $get_data -> update_muctieu($_POST['mucdich'], $_POST['tansuat'], $_POST['thutuc'], $ID);
-
-            if($up_muctieu){
-                echo "<script>alert('thanh cong');</script>";
-                header("Location: muctieu1.php");
-                exit();
-            }
-            else echo "<script>alert('khong thanh cong');</script>";
-        }
-    ?>
 
 </body>
 </html>
+<?php

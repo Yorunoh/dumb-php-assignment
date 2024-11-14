@@ -25,9 +25,6 @@
                 <div class="icon_second"><i class="fa fa-bars"></i></div>
                 <h3 class="h33">Thêm Mục Tiêu Chất Lượng</h3>
             </div>
-            <button type="submit" form="myForm" class="header_second">
-                Lưu
-            </button>
             </div>
         <div class="midle_second">
             <div class="midle_second1"></div>
@@ -74,7 +71,7 @@
                             else echo"<script>alert('thất bại')</script>";
                             } 
                             ?>
-                
+    <!--            
                 <div class="midle_second5">
                     <div>
                         <p class="title">Mục Tiêu</p>
@@ -111,6 +108,7 @@
                                             </tr>
                                             
                                         <?php endforeach;?>
+                                        
                                     
                                     </tbody>
                                 </table>
@@ -135,6 +133,8 @@
                 </div>
             </div>
         </div>
+                    -->
     </div>
+
 </body>
 </html>

@@ -36,7 +36,12 @@ class data3 {
             $run = mysqLi_query($conn, $sql);
             return $run;
         }
-        
+        public function select_stt($STT){
+            global $conn;
+            $sql = "select * from muctieu2 where STT='$STT' ";
+            $run = mysqLi_query($conn, $sql);
+            return $run;
+        }
 
 }
 ?>

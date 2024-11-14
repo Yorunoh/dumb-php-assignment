@@ -16,8 +16,8 @@ class data{
     public function select_muctieu()
     {
         global $conn;
-        $sql = "select * from muctieu";
-        $run = mysqLi_query($conn, $sql);
+        $sql = "select * from muctieu ";
+        $run = mysqli_query($conn, $sql);
         return $run;
     }
 
@@ -26,7 +26,7 @@ class data{
             global $conn;
             $sql = "update muctieu set mucdich = '$mucdich', thutuc = '$thutuc', tansuat = '$tansuat'
                     where ID = $ID";
-            $run = mysqLi_query($conn, $sql);
+            $run = mysqli_query($conn, $sql);
             return $run;
         }
     
@@ -35,10 +35,15 @@ class data{
             global $conn;
             $sql = "delete from muctieu 
                     where ID = $ID";
-            $run = mysqLi_query($conn, $sql);
+            $run = mysqli_query($conn, $sql);
             return $run;
         }
-        
+        public function select_id($ID){
+            global $conn;
+            $sql = "select * from muctieu where ID='$ID' ";
+            $run = mysqli_query($conn, $sql);
+            return $run;
+        }
 
 }
 ?>

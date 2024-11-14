@@ -11,7 +11,26 @@
         include('control2.php');
         $get_data = new data3();
         $STT = $_GET['SUA'];
-        $data = $get_data -> select_muctieu2();
+        $data = $get_data -> select_stt($STT);
+
+
+
+        if(isset($_POST['update']))
+        {
+            if(empty($_POST['mucdich']))
+                echo "muc dich khong duoc de trong";
+            else if(empty($_POST['donvi']))
+                echo "donvi khong duoc de trong";
+            else
+                $up_muctieu = $get_data -> update_muctieu2($_POST['mucdich'], $_POST['donvi'], $STT);
+
+            if($up_muctieu){
+                echo "<script>alert('thanh cong');</script>";
+                header("Location: update.php");
+                exit();
+            }
+            else echo "<script>alert('khong thanh cong');</script>";
+        }
 ?>
 <body>
     <header>
@@ -67,25 +86,6 @@
 
 
         </div>
-        
-        <?php
-        if(isset($_POST['update']))
-        {
-            if(empty($_POST['mucdich']))
-                echo "muc dich khong duoc de trong";
-            else if(empty($_POST['donvi']))
-                echo "tansuat khong duoc de trong";
-            else
-                $up_muctieu = $get_data -> update_muctieu2($_POST['mucdich'], $_POST['donvi'], $STT);
-
-            if($up_muctieu){
-                echo "<script>alert('thanh cong');</script>";
-                header("Location: muctieu2.php");
-                exit();
-            }
-            else echo "<script>alert('khong thanh cong');</script>";
-        }
-    ?>
 
 </body>
 </html>

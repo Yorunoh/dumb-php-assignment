@@ -135,16 +135,17 @@
                 <form method="POST">
                     <table border="1">
                         <tr>
-                            <td>Tên</td>
-                            <td>Tần suất giám sát</td>
+                            <td>Tên mục đích</td>
                             <td>Thủ tục</td>
+                            <td>Tần suất giám sát</td>  
                             <td>tuy chon</td>
                         </tr>
                         <?php foreach ($data as $a):?>
                         <tr>
                             <td><?php echo $a['mucdich']; ?></td>
-                            <td><?php echo $a['tansuat']; ?></td>
                             <td><?php echo $a['thutuc']; ?></td>
+                            <td><?php echo $a['tansuat']; ?></td>
+                            
                             
                             <td><a href="update.php?SUA=<?php echo $a['ID']?>" name="update">sua</a>&nbsp
                             <a href="delete.php?XOA=<?php echo $a['ID']?>" name="delete" onclick="if(confirm('Bạn có muốn xóa không?')) return true; else return false;">xoa</a></td>

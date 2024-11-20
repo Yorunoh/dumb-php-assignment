@@ -31,7 +31,7 @@
     
     </header>
     <div class="body_all">
-        <div class="header">
+        <div class="headerb">
             <div class="header1">
                 <div class="icon"><i class="fa fa-bars"></i></div>
                 <h3 class="h3">Mục tiêu chất lượng</h3>

@@ -20,7 +20,7 @@
     
     </header>
     <div class="body_all">
-        <div class="header">
+        <div class="headerb">
             <div class="h32">
                 <div class="icon_second"><i class="fa fa-bars"></i></div>
                 <h3 class="h33">Thêm Mục Tiêu Chất Lượng</h3>

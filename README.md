@@ -12,4 +12,5 @@ Here is the original link to the website: https://erpnext.com/open-source-crm
 i feel hopeless for my future. My code is much messier than before. Im adding the php for the second table but it kinda similar to first table in muctieu1.php file
 + Update 15/11/2024:
 just adding a simple login page with help from chatgpt
-
++ Update 20/11/2024:
+Apparently this web have minor bug about display. I try to fix but nothing work. I'll find on youtube to see why it doing that.
